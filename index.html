@@ -296,7 +296,18 @@
   <section class="cta">
     <h2>Ready to help your student thrive?</h2>
     <p>Let’s connect for a free intro call to see if it’s a fit.</p>
-    <button onclick="window.location.href='mailto:elliotsmith.tutoring@gmail.com'">Email Elliot</button>
+    <form action="https://formspree.io/f/xrblbvlg" method="POST" style="max-width: 500px; margin: 20px auto; text-align: left;">
+      <label for="name">Your Name</label><br>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+  
+      <label for="email">Your Email</label><br>
+      <input type="email" id="email" name="_replyto" required style="width: 100%; padding: 10px; margin-bottom: 10px;"><br>
+  
+      <label for="message">Message</label><br>
+      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 20px;"></textarea><br>
+  
+      <button type="submit" style="padding: 12px 24px; font-size: 1rem; background: white; color: #3b82f6; border: none; cursor: pointer;">Send Message</button>
+    </form>
   </section>
 
   <footer>
