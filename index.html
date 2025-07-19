@@ -64,6 +64,21 @@
       margin: 0 10px;
       text-decoration: none;
     }
+    .testimonial-slider {
+      position: relative;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    .testimonial {
+      display: none;
+      font-size: 1.1rem;
+      font-style: italic;
+      padding: 10px;
+    }
+    .testimonial.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -110,9 +125,11 @@
 
   <section class="section">
     <h2>Testimonials</h2>
-    <blockquote>“Elliot is the first tutor my kid actually looks forward to seeing.” – Parent, Brentwood</blockquote>
-    <blockquote>“He makes learning feel like a conversation, not a chore.” – Student, 11th grade</blockquote>
-    <blockquote>“Elliot helped our daughter go from overwhelmed to thriving.” – Parent, Santa Monica</blockquote>
+    <div class="testimonial-slider">
+      <div class="testimonial active">“Elliot is the first tutor my kid actually looks forward to seeing.” – Parent, Brentwood</div>
+      <div class="testimonial">“He makes learning feel like a conversation, not a chore.” – Student, 11th grade</div>
+      <div class="testimonial">“Elliot helped our daughter go from overwhelmed to thriving.” – Parent, Santa Monica</div>
+    </div>
   </section>
 
   <section class="section">
@@ -148,5 +165,15 @@
       Los Angeles, CA
     </p>
   </footer>
+
+  <script>
+    let index = 0;
+    const testimonials = document.querySelectorAll('.testimonial');
+    setInterval(() => {
+      testimonials[index].classList.remove('active');
+      index = (index + 1) % testimonials.length;
+      testimonials[index].classList.add('active');
+    }, 4000);
+  </script>
 </body>
 </html>
